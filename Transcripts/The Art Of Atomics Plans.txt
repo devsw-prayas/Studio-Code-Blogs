@@ -1,0 +1,43 @@
+The Art of Atomics: [The Art Of High Performance Compute]
+
+Section 1: CPUs go BRRRR, Threads Go Vroom!
+ Explains what's a thread and SMT
+
+Section 2: The Atomic Problem!
+ Explains only the problem, what happens when we have multiple cores, and suppose they are accessing data, what is correct, what is wrong
+
+Section 3: Maybe this is correct....?
+ An intuition driven wandering, of how we cud tackle parallel reads and writes, and how data behaves in concurrent envrionments
+
+Section 4: Hardware Gods Incarnate! TSO (Total Store Ordering)
+ We will explain what TSO is and what it guaranteed and what does that mean!
+
+Section 5: I spy with my eye....A stale value?
+ We now look deeper into visibility, how threads look at reads and writes
+
+Section 6: CPU: Sir, I am slowing down, lemme make ur data stale
+ out of order execution and how it messes with visibility
+
+Section 7: CPU Lockdown!
+ Explain the LOCK instruction and hardware fences, how they enforce stronger ordering than TSO provides
+
+Section 8: Getting our hands dirty.
+ We look into assembly directly, exploring how locks and fences behave
+
+Section 9: I hear you, assembly is hard!
+ We understand how Clang, MSVC, and GCC emit fences and what are compiler fence hints
+
+Section 10: May the threads get into order!
+ We look at Memory ordering, how these semantic guarantees work
+
+Section 11: Full synchronization, ft. Interlocked*
+ We look at true hardware level seq_cst operations defined by MSVC and how they compare with Linux __atomic*
+
+Section 12: Time for a test drive!
+We now write actual C++, look at asm, comparing how it behaves, based on contention and so on
+
+Bonus: P.S CPU: Sir, but what about my sweet cache?
+ We look at MESI one time, before concluding
+
+....And the Moral of the story is?
+ Conclusion about Atomics
