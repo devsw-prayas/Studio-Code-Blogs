@@ -1,0 +1,24 @@
+Section 1: I like my Pi to 300 digits
+	We look at the problem as a whole, the idea of higher precision numbers and why do we need them
+
+Section 2: Are we cooking yet?
+	We try to solve the problem of multi-limb addition.
+	Naive 
+	Unrolled
+	Naive AVX kernels
+	and somewhat fail
+
+Section 3: What in the cookery is going on?
+	We are hitting bottlenecks but how and whats happening on the hardware level
+
+Section 4: A shot of expresso!
+	We look at the general dual carry interleave supported by modern day multi-limb solvers
+
+Section 5: Two shots of expresso!
+	We find that assembly is not emitting it correctly
+	We force the compiler to push the true interleave by asm volatile 
+
+Conclusion: What a werid place to be in.
+	We look at performance numbers,
+	We look at the port 6 warfare on modern day intel chips, that adcx and adox try to monopolize port 6 for max throughput 
+	leading to half the performance being lost
